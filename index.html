@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Caffeine Rush</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body id="bg">
+    <script src="script.js"></script>
+    <center>
+      <div class="heading">Caffeine</div>
+      <div class="heading">Rush</div><br>
+      <h2 class="heading info">Click on the items to see ingredients!</h2>
+    </center>
+    <div id="cart-status" onclick="showBill()">Checkout</div>
+
+    <div class="container">
+      <div class="card" onclick="showLatte()">
+        <img src="Images/Latte.png"/>
+        <div class="card-details">
+          <p class="item-name">Lattè</p>
+          <div class="item-price">$4.50</div>
+        </div>
+        <div class="cart-controls">
+          <button class="btn-qty" onclick="event.stopPropagation(); changeQty('latte',-1)">-</button>
+          <span class="qty-no" id="latte-qty">0</span>
+          <button class="btn-qty" onclick="event.stopPropagation(); changeQty('latte',1)">+</button>
+        </div>
+      </div>
+
+      <div class="card" onclick="showPinkDrink()">
+        <img src="Images/Iced_Pink_Drink.png"/>
+        <div class="card-details">
+          <p class="item-name">Strawberry Lemonade</p>
+          <div class="item-price">$5.25</div>
+        </div>
+        <div class="cart-controls">
+          <button class="btn-qty" onclick="event.stopPropagation(); changeQty('pinkDrink',-1)">-</button>
+          <span class="qty-no" id="pinkDrink-qty">0</span>
+          <button class="btn-qty" onclick="event.stopPropagation(); changeQty('pinkDrink',1)">+</button>
+        </div>
+      </div>
+
+      <div class="card" onclick="showCake()">
+        <img src="Images/Red_Velvet_Cake.png"/>
+        <div class="card-details">
+          <p class="item-name">Red Velvet Pastry</p>
+          <div class="item-price">$6.00</div>
+        </div>
+        <div class="cart-controls">
+          <button class="btn-qty" onclick="event.stopPropagation(); changeQty('redVelvet',-1)">-</button>
+          <span class="qty-no" id="redVelvet-qty">0</span>
+          <button class="btn-qty" onclick="event.stopPropagation(); changeQty('redVelvet',1)">+</button>
+        </div>
+      </div>
+
+      <div class="card" onclick="showCroissant()">
+        <img src="Images/Croissant.jpg"/>
+        <div class="card-details">
+          <p class="item-name">Buttered Croissant</p>
+          <div class="item-price">$3.75</div>
+        </div>
+        <div class="cart-controls">
+          <button class="btn-qty" onclick="event.stopPropagation(); changeQty('croissant',-1)">-</button>
+          <span class="qty-no" id="croissant-qty">0</span>
+          <button class="btn-qty" onclick="event.stopPropagation(); changeQty('croissant',1)">+</button>
+        </div>
+      </div>
+
+      <div class="card" onclick="showSundae()">
+          <img src="Images/Sundae.png"/>
+          <div class="card-details">
+            <p class="item-name">Ice Cream Sundae</p>
+            <div class="item-price">$13.45</div>
+          </div>
+          <div class="cart-controls">
+            <button class="btn-qty" onclick="event.stopPropagation(); changeQty('sundae',-1)">-</button>
+            <span class="qty-no" id="sundae-qty">0</span>
+            <button class="btn-qty" onclick="event.stopPropagation(); changeQty('sundae',1)">+</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="ingOverlay" class="overlay">
+  
+      <div class="modal-box">
+        <span class="close-btn" onclick="hidePopup()">&times;</span>
+        
+        <div id="ing-content"></div>
+      </div>
+
+    </div>
+    
+    <div id="billOverlay" class="overlay">
+      <div id="billBox" class="modal-box">
+        <span class="close-btn" onclick="closeBill()">&times;</span>
+        <div class="billHeader">Caffeine Rush Receipt</div>
+        <div class="bill-row">
+          <div id="bill-items-list"></div>
+        </div>
+        <div class="totalRow">
+          <span>GRAND TOTAL</span>
+          <span id="billTotalPrice">$0.00</span>
+        </div>
+        <p id="ty">
+        Thank you for choosing Caffeine Rush!
+        </p>
+      </div>
+    </div>
+  </body>
+</html>
